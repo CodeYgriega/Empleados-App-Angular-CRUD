@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Empleado } from '../models/empleado';
 
 @Injectable({
@@ -6,30 +8,15 @@ import { Empleado } from '../models/empleado';
 })
 export class AppService {
 
-  private empleados: Empleado[] = [
-    {
-      nombre: "Carlitos",
-      apellido: "Balá",
-      email: "carlitos@gmail.com",
-      telefono: 23255434}
-  ];
+  private apiURL = "http://localhost:8080";
 
-  empleadosFiltrados: Empleado[] = [];
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  obtenerEmpleados(){
-    return this.empleados;
+  obtenerEmpleados():Observable<Empleado[]>{
+    return this.http.get<Empleado[]>(`${this.apiURL}/api/empleados`);
   }
 
   agregarEmpleado(empleado: Empleado){
-    return this.empleados.push(empleado);
-  }
-
-  eliminarEmpleados(nombre: string){
-    this.empleadosFiltrados = this.empleados.filter(persona => {
-      return persona.nombre !== nombre;
-    })
-    this.empleados = this.empleadosFiltrados;
+    return this.http.post(`${this.apiURL}/api/nuevo-empleado`, empleado);
   }
 }

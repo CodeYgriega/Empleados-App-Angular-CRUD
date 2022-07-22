@@ -18,11 +18,12 @@ export class ListadoComponent implements OnInit {
   }
 
   traerEmpleados(){
-    return this.empleados = this.service.obtenerEmpleados();
+    return this.service.obtenerEmpleados().subscribe(data => {
+      this.empleados = data;
+    })
   }
   
   eliminarEmpleado(nombre: string){
-    this.service.eliminarEmpleados(nombre);
-    this.traerEmpleados();
+
   }
 }

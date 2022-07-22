@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListadoComponent } from './components/listado/listado.component';
 import { AgregarEmpleadoComponent } from './components/agregar-empleado/agregar-empleado.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,10 +20,12 @@ export class AgregarEmpleadoComponent implements OnInit {
   constructor(private service: AppService, private router: Router) { }
 
   ngOnInit(): void {
+    this.enviarEmpleado();
 } 
 
   enviarEmpleado(){
-    this.service.agregarEmpleado(this.empleadoNuevo);
-    this.router.navigate(["listado"]);
+    return this.service.agregarEmpleado(this.empleadoNuevo).subscribe(data => {
+      this.router.navigate(["listado"]);
+    });
   }
 }
