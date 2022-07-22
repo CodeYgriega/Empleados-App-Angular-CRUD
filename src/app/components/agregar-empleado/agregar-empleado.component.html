@@ -1,0 +1,34 @@
+<div>
+    <h2>Añada un nuevo empleado a la lista</h2>
+    <form (ngSubmit)="enviarEmpleado()">
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Martín..."
+            [(ngModel)]="empleadoNuevo.nombre"
+            required>
+
+        <input
+            type="text"
+            name="apellido"
+            placeholder="Ramirez..."
+            required
+            [(ngModel)]="empleadoNuevo.apellido">
+
+        <input
+            type="text"
+            name="email"
+            placeholder="martin98@gmail.com..."
+            required
+            [(ngModel)]="empleadoNuevo.email">
+
+            <input
+            type="text"
+            name="telefono"
+            placeholder="39872291..."
+            required
+            [(ngModel)]="empleadoNuevo.telefono">
+
+        <button>Agregar Empleado</button>
+    </form>
+</div>

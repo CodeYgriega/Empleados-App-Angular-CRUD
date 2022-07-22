@@ -1,0 +1,18 @@
+<main>
+    <table>
+        <tr class="encabezados">
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+        <tr class="empleados" *ngFor="let empleado of empleados">
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellido}}</td>
+            <td>{{empleado.email}}</td>
+            <td>{{empleado.telefono}}</td>
+            <td><button (click)="eliminarEmpleado(empleado.nombre)">Eliminar</button></td>
+        </tr>
+    </table>
+</main>

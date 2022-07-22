@@ -1,0 +1,32 @@
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    h2{
+        margin-top: 70px;
+        font-size: 32px;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        font-size: 19px;
+        gap: 15px;
+            input{
+                padding: 4px;
+                height: 17px;
+                font-size: 15px;
+                color: rgb(83, 81, 81);
+                border-radius: 5px;
+                width: 70%;
+            }
+        }
+        button{
+            font-size: 18px;
+            width: 70%;
+        }
+    }
