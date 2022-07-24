@@ -16,7 +16,11 @@ export class AppService {
     return this.http.get<Empleado[]>(`${this.apiURL}/api/empleados`);
   }
 
-  agregarEmpleado(empleado: Empleado){
+  agregarEmpleado(empleado: any){
     return this.http.post(`${this.apiURL}/api/nuevo-empleado`, empleado);
+  }
+
+  eliminarEmpleado(id: number){
+    return this.http.delete(`${this.apiURL}/api/eliminar-empleado/${id}`);
   }
 }

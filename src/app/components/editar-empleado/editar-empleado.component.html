@@ -1,0 +1,14 @@
+<div>
+    <h2>Editar empleado</h2>
+    <form [formGroup]="formEditar" (ngSubmit)="enviarEmpleadoEditado()">
+        <input type="text" name="nombre" formControlName="nombre">
+
+        <input type="text" name="apellido" formControlName="apellido">
+
+        <input type="text" name="email" formControlName="email">
+
+        <input type="text" name="telefono" formControlName="telefono">
+
+        <button>Editar empleado</button>
+    </form>
+</div>

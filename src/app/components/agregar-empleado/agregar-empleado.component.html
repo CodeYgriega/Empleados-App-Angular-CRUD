@@ -1,33 +1,29 @@
 <div>
     <h2>Añada un nuevo empleado a la lista</h2>
-    <form (ngSubmit)="enviarEmpleado()">
+    <form [formGroup]="form" (ngSubmit)="enviarEmpleado()">
         <input
             type="text"
             name="nombre"
             placeholder="Martín..."
-            [(ngModel)]="empleadoNuevo.nombre"
-            required>
+            formControlName="nombre">
 
         <input
             type="text"
             name="apellido"
             placeholder="Ramirez..."
-            required
-            [(ngModel)]="empleadoNuevo.apellido">
+            formControlName="apellido">
 
         <input
-            type="text"
+            type="email"
             name="email"
             placeholder="martin98@gmail.com..."
-            required
-            [(ngModel)]="empleadoNuevo.email">
+            formControlName="email">
 
             <input
             type="text"
             name="telefono"
             placeholder="39872291..."
-            required
-            [(ngModel)]="empleadoNuevo.telefono">
+            formControlName="telefono">
 
         <button>Agregar Empleado</button>
     </form>
