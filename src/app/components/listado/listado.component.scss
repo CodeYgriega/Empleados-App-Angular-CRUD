@@ -2,6 +2,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
     table {
         margin: 50px;
         width: 70%;
@@ -13,11 +14,35 @@ main {
             }
         }
         .empleados{
-    
             td{ 
                 text-align: center;
                 padding: 10px;
             }
+            button{
+                margin: 5px;
+            }
+            .eliminar{
+                background-color: red;
+                border: 1px solid red;
+                &:hover{
+                    background-color: white;
+                    color: red;
+                    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 570px){
+    table{
+        .encabezados{
+            display: none;
+        }
+        .empleados{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
         }
     }
 }
