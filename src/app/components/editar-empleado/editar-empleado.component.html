@@ -1,14 +1,55 @@
-<div>
-    <h2>Editar empleado</h2>
-    <form [formGroup]="formEditar" (ngSubmit)="enviarEmpleadoEditado()">
-        <input type="text" name="nombre" formControlName="nombre">
+<div class="container">
+  <div class="w-50 mx-auto d-flex flex-column justify-content-start">
+    <h1 class="mt-5">Editar empleado</h1>
+    <form
+    class="w-75 d-flex flex-column gap-2 mt-5"
+    [formGroup]="formEditar"
+    (ngSubmit)="enviarEmpleadoEditado()">
 
-        <input type="text" name="apellido" formControlName="apellido">
+        <label for="nombre">
+          Nombre:
+        </label>
 
-        <input type="text" name="email" formControlName="email">
+        <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        formControlName="nombre">
 
-        <input type="text" name="telefono" formControlName="telefono">
+        <label for="apellido">
+          Apellido:
+        </label>
 
-        <button>Editar empleado</button>
+        <input
+        type="text"
+        class="form-control"
+        name="apellido"
+        formControlName="apellido">
+
+        <label for="email">
+          Email:
+        </label>
+
+        <input
+        type="text"
+        class="form-control"
+        name="email"
+        formControlName="email">
+
+        <label for="telefono">
+          Teléfono:
+        </label>
+
+        <input
+        type="text"
+        class="form-control"
+        name="telefono"
+        formControlName="telefono">
+
+        <button
+        class="btn btn-primary w-100 mt-2">
+          Editar empleado
+        </button>
     </form>
+  </div>
 </div>
